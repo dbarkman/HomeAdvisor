@@ -3,7 +3,7 @@
 Included in this repo are the following:
 * HomeAdvisorAPI: code responsible for handling incoming API calls and returning the response produced by the framework.
 * HomeAdvisorFramework: code responsible for creating, managing and deleting HomeAdvisor objects and data.
-* HomeAdvisor.sql: sql for creating the companion database and user for holding the HomeAdvisor data.
+* HomeAdvisor.sql: SQL for creating the companion database and user for storing the HomeAdvisor data.
 * HomeAdvisor.postman_collection.json: the test suite for testing the HomeAdvisor project with PostMan.
 	* Note: the test suite currently points to the hosted version of this project.
 
@@ -199,18 +199,19 @@ Parameters for filtering results:
 * bussinessName: string
 	* the name or partial name of a business
 	* if both businessId and businessName are included, businessId will override businessName
+* AND
 * workType: string
 	* the type of work performed by the business
 * operatingCity: string
-	* the city where a business operates in
+	* the city where a business operates
 * openOn: string
 	* a specific day of the week when a business is open
 	* accepted values: [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
 * openAt: integer
-	* a time, in 24 hour value a business is open
+	* a time, in 24 hour value, a business is open
 	* accepted values: 0-23
 * averageRatingScore: integer
-	* a minimum score that a business's average of all scores must exceed
+	* a minimum score that a business's average of all scores must meet or exceed
 	* accepted values: 1-5
 
 Parameters for sorting results:
