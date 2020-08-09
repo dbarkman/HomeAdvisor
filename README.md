@@ -4,9 +4,13 @@ Included in this repo are the following:
 * HomeAdvisorAPI: code responsible for handling incoming API calls and returning the response produced by the framework.
 * HomeAdvisorFramework: code responsible for creating, managing and deleting HomeAdvisor objects and data.
 * HomeAdvisor.sql: sql for creating the companion database and user for holding the HomeAdvisor data.
-* HomeAdvisor.postman_collection.json: the test suite for testing the HomeAdvisor project with PostMan. Note: the test suite currently points to the deployed version of this project at https://cla.ms.
+* HomeAdvisor.postman_collection.json: the test suite for testing the HomeAdvisor project with PostMan.
+	* Note: the test suite currently points to the hosted version of this project.
 
-## Install
+## Hosted
+This project is hosted and can be run at https://cla.ms.
+
+## Local Install
 
 This project has been tested on a LAMP stack with the following versions:
 * CentOS 8.1
