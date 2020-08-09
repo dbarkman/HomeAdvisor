@@ -2,4 +2,4 @@ Satisfy Any
 
 RewriteEngine On
 
-RewriteRule ^(testPass|business)?$ index.php?noun=$1 [QSA]
+RewriteRule ^(testPass|business|.*)?$ index.php?noun=$1 [QSA]

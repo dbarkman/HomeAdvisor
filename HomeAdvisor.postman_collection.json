@@ -1,0 +1,1229 @@
+{
+	"info": {
+		"_postman_id": "91bd2c50-9473-4921-b242-9a7d4efe5a60",
+		"name": "HomeAdvisor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TestPass",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "12aa56d1-162c-4b0c-841c-2611902a2e64",
+						"exec": [
+							"//general tests",
+							"pm.test(\"Status 200 test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"OK test\", function () {",
+							"    pm.response.to.be.ok;",
+							"});",
+							"pm.test(\"With Body test\", function () {",
+							"    pm.response.to.be.withBody;",
+							"});",
+							"pm.test(\"JSON Body test\", function () {",
+							"    pm.response.to.be.json;",
+							"});",
+							"pm.test(\"Not Error test\", function () {",
+							"    pm.response.to.not.be.error;",
+							"});",
+							"",
+							"//make sure the response contains the exact format always returned",
+							"pm.test(\"Contains httpStatus Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"httpStatus\", 200);",
+							"});",
+							"pm.test(\"Contains noun Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"noun\", \"testPass\");",
+							"});",
+							"pm.test(\"Contains verb Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"verb\", \"GET\");",
+							"});",
+							"pm.test(\"Contains errorCode Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"errorCode\", \"none\");",
+							"});",
+							"pm.test(\"Contains errors Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"errors\", []);",
+							"});",
+							"pm.test(\"Contains friendlyError Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"friendlyError\", \"\");",
+							"});",
+							"pm.test(\"Contains result Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"result\", \"success\");",
+							"});",
+							"pm.test(\"Contains count Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"count\", 0);",
+							"});",
+							"pm.test(\"Contains data Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"data\", []);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cla.ms/testPass",
+					"protocol": "https",
+					"host": [
+						"cla",
+						"ms"
+					],
+					"path": [
+						"testPass"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bad Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "12aa56d1-162c-4b0c-841c-2611902a2e64",
+						"exec": [
+							"//general tests",
+							"pm.test(\"Status 400 test\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"pm.test(\"Not OK test\", function () {",
+							"    pm.response.to.not.be.ok;",
+							"});",
+							"pm.test(\"With Body test\", function () {",
+							"    pm.response.to.be.withBody;",
+							"});",
+							"pm.test(\"JSON Body test\", function () {",
+							"    pm.response.to.be.json;",
+							"});",
+							"pm.test(\"Error test\", function () {",
+							"    pm.response.to.be.error;",
+							"});",
+							"",
+							"//make sure the response contains the exact format always returned",
+							"pm.test(\"Contains httpStatus Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"httpStatus\", 400);",
+							"});",
+							"pm.test(\"Contains noun Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"noun\", \"testPass\");",
+							"});",
+							"pm.test(\"Contains verb Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"verb\", \"POST\");",
+							"});",
+							"pm.test(\"Contains errorCode Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"errorCode\", \"badRequest\");",
+							"});",
+							"pm.test(\"Contains errors Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"errors\", [\"Bad Request\"]);",
+							"});",
+							"pm.test(\"Contains friendlyError Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"friendlyError\", \"Bad Request\");",
+							"});",
+							"pm.test(\"Contains result Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"result\", \"fail\");",
+							"});",
+							"pm.test(\"Contains count Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"count\", 0);",
+							"});",
+							"pm.test(\"Contains data Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"data\", []);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://cla.ms/testPass",
+					"protocol": "https",
+					"host": [
+						"cla",
+						"ms"
+					],
+					"path": [
+						"testPass"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resource Not Found",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "12aa56d1-162c-4b0c-841c-2611902a2e64",
+						"exec": [
+							"//general tests",
+							"pm.test(\"Status 404 test\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"pm.test(\"Not OK test\", function () {",
+							"    pm.response.to.not.be.ok;",
+							"});",
+							"pm.test(\"With Body test\", function () {",
+							"    pm.response.to.be.withBody;",
+							"});",
+							"pm.test(\"JSON Body test\", function () {",
+							"    pm.response.to.be.json;",
+							"});",
+							"pm.test(\"Error test\", function () {",
+							"    pm.response.to.be.error;",
+							"});",
+							"",
+							"//make sure the response contains the exact format always returned",
+							"pm.test(\"Contains httpStatus Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"httpStatus\", 404);",
+							"});",
+							"pm.test(\"Contains noun Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"noun\", \"thing\");",
+							"});",
+							"pm.test(\"Contains verb Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"verb\", \"GET\");",
+							"});",
+							"pm.test(\"Contains errorCode Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"errorCode\", \"resourceNotFound\");",
+							"});",
+							"pm.test(\"Contains errors Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"errors\", [\"Resource Not Found\"]);",
+							"});",
+							"pm.test(\"Contains friendlyError Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"friendlyError\", \"Resource Not Found\");",
+							"});",
+							"pm.test(\"Contains result Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"result\", \"fail\");",
+							"});",
+							"pm.test(\"Contains count Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"count\", 0);",
+							"});",
+							"pm.test(\"Contains data Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"data\", []);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cla.ms/thing",
+					"protocol": "https",
+					"host": [
+						"cla",
+						"ms"
+					],
+					"path": [
+						"thing"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Business - ID 10 - No Business",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8c057e6d-d910-4848-b4f5-840e2a508754",
+						"exec": [
+							"var responseBusinessId1 = pm.collectionVariables.get(\"responseBusinessId1\");",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "f481659c-f2e8-4153-bbbd-8eba4cf5e2ee",
+						"exec": [
+							"//general tests",
+							"pm.test(\"Status 200 test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"OK test\", function () {",
+							"    pm.response.to.be.ok;",
+							"});",
+							"pm.test(\"With Body test\", function () {",
+							"    pm.response.to.be.withBody;",
+							"});",
+							"pm.test(\"JSON Body test\", function () {",
+							"    pm.response.to.be.json;",
+							"});",
+							"pm.test(\"Not Error test\", function () {",
+							"    pm.response.to.not.be.error;",
+							"});",
+							"",
+							"//make sure the response contains the exact format always returned",
+							"pm.test(\"Contains httpStatus Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"httpStatus\", 200);",
+							"});",
+							"pm.test(\"Contains noun Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"noun\", \"business\");",
+							"});",
+							"pm.test(\"Contains verb Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"verb\", \"DELETE\");",
+							"});",
+							"pm.test(\"Contains errorCode Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"errorCode\", \"businessNotDeleted\");",
+							"});",
+							"pm.test(\"Contains errors Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"errors\", [\"No business found to delete.\"]);",
+							"});",
+							"pm.test(\"Contains friendlyError Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"friendlyError\", \"No business found to delete.\");",
+							"});",
+							"pm.test(\"Contains result Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"result\", \"success\");",
+							"});",
+							"pm.test(\"Contains count Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"count\", 0);",
+							"});",
+							"pm.test(\"Contains data Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"data\", []);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://cla.ms/business?businessId=10",
+					"protocol": "https",
+					"host": [
+						"cla",
+						"ms"
+					],
+					"path": [
+						"business"
+					],
+					"query": [
+						{
+							"key": "businessId",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Businesses",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8c057e6d-d910-4848-b4f5-840e2a508754",
+						"exec": [
+							"var responseBusinessId1 = pm.collectionVariables.get(\"responseBusinessId1\");",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "f481659c-f2e8-4153-bbbd-8eba4cf5e2ee",
+						"exec": [
+							"//general tests",
+							"pm.test(\"Status 200 test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"OK test\", function () {",
+							"    pm.response.to.be.ok;",
+							"});",
+							"pm.test(\"With Body test\", function () {",
+							"    pm.response.to.be.withBody;",
+							"});",
+							"pm.test(\"JSON Body test\", function () {",
+							"    pm.response.to.be.json;",
+							"});",
+							"pm.test(\"Not Error test\", function () {",
+							"    pm.response.to.not.be.error;",
+							"});",
+							"",
+							"//make sure the response contains the exact format always returned",
+							"pm.test(\"Contains httpStatus Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"httpStatus\", 200);",
+							"});",
+							"pm.test(\"Contains noun Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"noun\", \"business\");",
+							"});",
+							"pm.test(\"Contains verb Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"verb\", \"DELETE\");",
+							"});",
+							"pm.test(\"Contains errorCode Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"errorCode\");",
+							"});",
+							"pm.test(\"Contains errors Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"pm.test(\"Contains friendlyError Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"friendlyError\");",
+							"});",
+							"pm.test(\"Contains result Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"result\", \"success\");",
+							"});",
+							"pm.test(\"Contains data Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"data\", []);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://cla.ms/business?businessId=0",
+					"protocol": "https",
+					"host": [
+						"cla",
+						"ms"
+					],
+					"path": [
+						"business"
+					],
+					"query": [
+						{
+							"key": "businessId",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NewBusiness - x2",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b58256ed-a569-422f-a0f4-4bba013206c0",
+						"exec": [
+							"pm.collectionVariables.set(\"ratingScore1\", Math.floor((Math.random() * 5) + 1));",
+							"pm.collectionVariables.set(\"ratingScore2\", Math.floor((Math.random() * 5) + 1));",
+							"pm.collectionVariables.set(\"ratingScore3\", Math.floor((Math.random() * 5) + 1));",
+							"pm.collectionVariables.set(\"ratingScore4\", Math.floor((Math.random() * 5) + 1));",
+							"pm.collectionVariables.set(\"ratingScore5\", Math.floor((Math.random() * 5) + 1));",
+							"pm.collectionVariables.set(\"ratingScore6\", Math.floor((Math.random() * 5) + 1));",
+							"pm.collectionVariables.set(\"businessName\", \"{{$randomLastName}} Contracting {{$randomCompanySuffix}}\");",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3ec87740-4760-4d9b-83f0-96207d20b162",
+						"exec": [
+							"//grab data from the request and store in a collection variable",
+							"var requestData = JSON.parse(pm.request.body);",
+							"var requestBusinessName1 = requestData[0].businessName;",
+							"var requestBusinessName2 = requestData[1].businessName;",
+							"pm.collectionVariables.set(\"requestBusinessName1\", requestBusinessName1);",
+							"pm.collectionVariables.set(\"requestBusinessName2\", requestBusinessName2);",
+							"//grab data from the response and store in a collection variable",
+							"var jsonData = JSON.parse(responseBody);",
+							"var responseBusinessId1 = jsonData.data[0].id;",
+							"var responseBusinessId2 = jsonData.data[1].id;",
+							"pm.collectionVariables.set(\"responseBusinessId1\", responseBusinessId1);",
+							"pm.collectionVariables.set(\"responseBusinessId2\", responseBusinessId2);",
+							"var responseBusinessName1 = jsonData.data[0].businessName;",
+							"var responseBusinessName2 = jsonData.data[1].businessName;",
+							"pm.collectionVariables.set(\"responseBusinessName1\", responseBusinessName1);",
+							"pm.collectionVariables.set(\"responseBusinessName2\", responseBusinessName2);",
+							"// console.log(responseBusinessId1 + \" - \" + requestBusinessName1 + \" - \" + responseBusinessName1 + \" - \" + responseBusinessId2 + \" - \" + requestBusinessName2 + \" - \" + responseBusinessName2);",
+							"",
+							"//general tests",
+							"pm.test(\"Status 201 test\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"pm.test(\"With Body test\", function () {",
+							"    pm.response.to.be.withBody;",
+							"});",
+							"pm.test(\"JSON Body test\", function () {",
+							"    pm.response.to.be.json;",
+							"});",
+							"pm.test(\"Not Error test\", function () {",
+							"    pm.response.to.not.be.error;",
+							"});",
+							"",
+							"//make sure the response contains the exact format always returned",
+							"pm.test(\"Contains httpStatus Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"httpStatus\", 201);",
+							"});",
+							"pm.test(\"Contains noun Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"noun\", \"business\");",
+							"});",
+							"pm.test(\"Contains verb Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"verb\", \"POST\");",
+							"});",
+							"pm.test(\"Contains errorCode Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"errorCode\", \"none\");",
+							"});",
+							"pm.test(\"Contains errors Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"errors\", []);",
+							"});",
+							"pm.test(\"Contains friendlyError Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"friendlyError\", \"\");",
+							"});",
+							"pm.test(\"Contains result Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"result\", \"success\");",
+							"});",
+							"pm.test(\"Contains count Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"count\", 2);",
+							"});",
+							"pm.test(\"Contains data Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"data\");",
+							"});",
+							"",
+							"pm.test(\"Body matches expected data strings\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"id\");",
+							"    pm.expect(pm.response.text()).to.include(\"businessName\");",
+							"    pm.expect(pm.response.text()).to.include(\"businessHours\");",
+							"    pm.expect(pm.response.text()).to.include(\"businessAddress\");",
+							"    pm.expect(pm.response.text()).to.include(\"operatingCities\");",
+							"    pm.expect(pm.response.text()).to.include(\"workTypes\");",
+							"    pm.expect(pm.response.text()).to.include(\"reviews\");",
+							"});",
+							"pm.test(\"Body matches expected data\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Sunday\");",
+							"    pm.expect(pm.response.text()).to.include(\"CO\");",
+							"    pm.expect(pm.response.text()).to.include(\"80206\");",
+							"    pm.expect(pm.response.text()).to.include(\"Denver\");",
+							"    pm.expect(pm.response.text()).to.include(\"Mesa\");",
+							"    pm.expect(pm.response.text()).to.include(\"Packing\");",
+							"    pm.expect(pm.response.text()).to.include(\"Wednesday\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"businessName\": \"{{businessName}}\",\n        \"businessHours\": [{\n            \"dayOfWeek\": \"Sunday\",\n            \"open\": 10,\n            \"close\": 2\n        }, {\n            \"dayOfWeek\": \"Monday\",\n            \"open\": 8,\n            \"close\": 5\n        }, {\n            \"dayOfWeek\": \"Tuesday\",\n            \"open\": 8,\n            \"close\": 5\n        }, {\n            \"dayOfWeek\": \"Wednesday\",\n            \"open\": 8,\n            \"close\": 4 \n        }, {\n            \"dayOfWeek\": \"Thursday\",\n            \"open\": 8,\n            \"close\": 6\n        }, {\n            \"dayOfWeek\": \"Friday\",\n            \"open\": 8,\n            \"close\": 4\n        }, {\n            \"dayOfWeek\": \"Saturday\",\n            \"open\": 9,\n            \"close\": 3\n        }],\n        \"businessAddress\": {\n            \"addressLine1\": \"{{$randomStreetAddress}}\",\n            \"addressLine2\": \"Suite {{$randomInt}}\",\n            \"city\": \"{{$randomCity}}\",\n            \"stateAbbr\": \"CO\",\n            \"postal\": \"80206\"\n        },\n        \"operatingCities\": [\"{{$randomCity}}\", \"{{$randomCity}}\", \"{{$randomCity}}\", \"{{$randomCity}}\", \"Denver\", \"Phoenix\", \"Mesa\"],\n        \"workTypes\": [\"{{$randomIngverb}}\", \"{{$randomIngverb}}\", \"{{$randomIngverb}}\", \"{{$randomIngverb}}\", \"Packing\"],\n        \"reviews\": [{\n            \"ratingScore\": {{ratingScore1}},\n            \"customerComment\": \"{{$randomPhrase}}\"\n        },{\n            \"ratingScore\": {{ratingScore2}},\n            \"customerComment\": \"{{$randomPhrase}}\"\n        },{\n            \"ratingScore\": {{ratingScore3}},\n            \"customerComment\": \"{{$randomPhrase}}\"\n        }]\n    },\n    {\n        \"businessName\": \"{{businessName}}\",\n        \"businessHours\": [{\n            \"dayOfWeek\": \"Sunday\",\n            \"open\": 10,\n            \"close\": 2\n        }, {\n            \"dayOfWeek\": \"Monday\",\n            \"open\": 8,\n            \"close\": 5\n        }, {\n            \"dayOfWeek\": \"Tuesday\",\n            \"open\": 8,\n            \"close\": 5\n        }, {\n            \"dayOfWeek\": \"Wednesday\",\n            \"open\": 8,\n            \"close\": 4 \n        }, {\n            \"dayOfWeek\": \"Thursday\",\n            \"open\": 8,\n            \"close\": 6\n        }, {\n            \"dayOfWeek\": \"Friday\",\n            \"open\": 8,\n            \"close\": 4\n        }, {\n            \"dayOfWeek\": \"Saturday\",\n            \"open\": 9,\n            \"close\": 3\n        }],\n        \"businessAddress\": {\n            \"addressLine1\": \"{{$randomStreetAddress}}\",\n            \"addressLine2\": \"Suite {{$randomInt}}\",\n            \"city\": \"{{$randomCity}}\",\n            \"stateAbbr\": \"CO\",\n            \"postal\": \"80206\"\n        },\n        \"operatingCities\": [\"{{$randomCity}}\", \"{{$randomCity}}\", \"{{$randomCity}}\", \"{{$randomCity}}\", \"Denver\", \"Phoenix\", \"Mesa\"],\n        \"workTypes\": [\"{{$randomIngverb}}\", \"{{$randomIngverb}}\", \"{{$randomIngverb}}\", \"{{$randomIngverb}}\", \"Packing\"],\n        \"reviews\": [{\n            \"ratingScore\": {{ratingScore4}},\n            \"customerComment\": \"{{$randomPhrase}}\"\n        },{\n            \"ratingScore\": {{ratingScore5}},\n            \"customerComment\": \"{{$randomPhrase}}\"\n        },{\n            \"ratingScore\": {{ratingScore6}},\n            \"customerComment\": \"{{$randomPhrase}}\"\n        }]\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cla.ms/business",
+					"protocol": "https",
+					"host": [
+						"cla",
+						"ms"
+					],
+					"path": [
+						"business"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Businesses - by businessName",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "27da5834-86cc-4953-982c-73d72d7ef30b",
+						"exec": [
+							"//grab data from the response and store in a collection variable",
+							"var jsonData = JSON.parse(responseBody);",
+							"var businessId1 = jsonData.data[0].id;",
+							"var businessId2 = jsonData.data[1].id;",
+							"pm.collectionVariables.set(\"businessId1\", businessId1);",
+							"pm.collectionVariables.set(\"businessId2\", businessId2);",
+							"var businessName1 = jsonData.data[0].businessName;",
+							"var businessName2 = jsonData.data[1].businessName;",
+							"pm.collectionVariables.set(\"businessName1\", businessName1);",
+							"pm.collectionVariables.set(\"businessName2\", businessName2);",
+							"",
+							"//general tests",
+							"pm.test(\"Status 200 test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"OK test\", function () {",
+							"    pm.response.to.be.ok;",
+							"});",
+							"pm.test(\"With Body test\", function () {",
+							"    pm.response.to.be.withBody;",
+							"});",
+							"pm.test(\"JSON Body test\", function () {",
+							"    pm.response.to.be.json;",
+							"});",
+							"pm.test(\"Not Error test\", function () {",
+							"    pm.response.to.not.be.error;",
+							"});",
+							"",
+							"//make sure the response contains the exact format always returned",
+							"pm.test(\"Contains httpStatus Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"httpStatus\", 200);",
+							"});",
+							"pm.test(\"Contains noun Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"noun\", \"business\");",
+							"});",
+							"pm.test(\"Contains verb Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"verb\", \"GET\");",
+							"});",
+							"pm.test(\"Contains errorCode Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"errorCode\", \"none\");",
+							"});",
+							"pm.test(\"Contains errors Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"errors\", []);",
+							"});",
+							"pm.test(\"Contains friendlyError Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"friendlyError\", \"\");",
+							"});",
+							"pm.test(\"Contains result Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"result\", \"success\");",
+							"});",
+							"pm.test(\"Contains count Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"count\", 2);",
+							"});",
+							"pm.test(\"Contains data Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"data\");",
+							"});",
+							"pm.test(\"Does not contain ID property\", function () {",
+							"    var jsonData = JSON.parse(responseBody);",
+							"    var firstDataObject = jsonData.data[0];",
+							"    pm.expect(firstDataObject).to.not.have.property(\"id\");",
+							"});",
+							"",
+							"pm.test(\"Body matches expected data strings\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"businessName\");",
+							"    pm.expect(pm.response.text()).to.include(\"businessHours\");",
+							"    pm.expect(pm.response.text()).to.include(\"businessAddress\");",
+							"    pm.expect(pm.response.text()).to.include(\"operatingCities\");",
+							"    pm.expect(pm.response.text()).to.include(\"workTypes\");",
+							"    pm.expect(pm.response.text()).to.include(\"reviews\");",
+							"});",
+							"pm.test(\"Body matches expected data\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Sunday\");",
+							"    pm.expect(pm.response.text()).to.include(\"CO\");",
+							"    pm.expect(pm.response.text()).to.include(\"80206\");",
+							"    pm.expect(pm.response.text()).to.include(\"Denver\");",
+							"    pm.expect(pm.response.text()).to.include(\"Mesa\");",
+							"    pm.expect(pm.response.text()).to.include(\"Packing\");",
+							"    pm.expect(pm.response.text()).to.include(\"Wednesday\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cla.ms/business?order=businessName&businessName=Contracting&operatingCity=Denver&workType=Packing&averageRatingScore=1&openOn=Monday&openAt=12",
+					"protocol": "https",
+					"host": [
+						"cla",
+						"ms"
+					],
+					"path": [
+						"business"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "businessName"
+						},
+						{
+							"key": "direction",
+							"value": "desc",
+							"disabled": true
+						},
+						{
+							"key": "businessId",
+							"value": "22",
+							"disabled": true
+						},
+						{
+							"key": "businessName",
+							"value": "Contracting"
+						},
+						{
+							"key": "operatingCity",
+							"value": "Denver"
+						},
+						{
+							"key": "workType",
+							"value": "Packing"
+						},
+						{
+							"key": "averageRatingScore",
+							"value": "1"
+						},
+						{
+							"key": "openOn",
+							"value": "Monday"
+						},
+						{
+							"key": "openAt",
+							"value": "12"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Businesses - by averageRatingScore",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "07e5641b-a760-4c11-97ed-d547c432970e",
+						"exec": [
+							"//general tests",
+							"pm.test(\"Status 200 test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"OK test\", function () {",
+							"    pm.response.to.be.ok;",
+							"});",
+							"pm.test(\"With Body test\", function () {",
+							"    pm.response.to.be.withBody;",
+							"});",
+							"pm.test(\"JSON Body test\", function () {",
+							"    pm.response.to.be.json;",
+							"});",
+							"pm.test(\"Not Error test\", function () {",
+							"    pm.response.to.not.be.error;",
+							"});",
+							"",
+							"//make sure the response contains the exact format always returned",
+							"pm.test(\"Contains httpStatus Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"httpStatus\", 200);",
+							"});",
+							"pm.test(\"Contains noun Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"noun\", \"business\");",
+							"});",
+							"pm.test(\"Contains verb Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"verb\", \"GET\");",
+							"});",
+							"pm.test(\"Contains errorCode Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"errorCode\", \"none\");",
+							"});",
+							"pm.test(\"Contains errors Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"errors\", []);",
+							"});",
+							"pm.test(\"Contains friendlyError Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"friendlyError\", \"\");",
+							"});",
+							"pm.test(\"Contains result Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"result\", \"success\");",
+							"});",
+							"pm.test(\"Contains count Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"count\", 2);",
+							"});",
+							"pm.test(\"Contains data Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"data\");",
+							"});",
+							"pm.test(\"Does not contain ID property\", function () {",
+							"    var jsonData = JSON.parse(responseBody);",
+							"    var firstDataObject = jsonData.data[0];",
+							"    pm.expect(firstDataObject).to.not.have.property(\"id\");",
+							"});",
+							"",
+							"pm.test(\"Body matches expected data strings\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"businessName\");",
+							"    pm.expect(pm.response.text()).to.include(\"businessHours\");",
+							"    pm.expect(pm.response.text()).to.include(\"businessAddress\");",
+							"    pm.expect(pm.response.text()).to.include(\"operatingCities\");",
+							"    pm.expect(pm.response.text()).to.include(\"workTypes\");",
+							"    pm.expect(pm.response.text()).to.include(\"reviews\");",
+							"});",
+							"pm.test(\"Body matches expected data\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Sunday\");",
+							"    pm.expect(pm.response.text()).to.include(\"CO\");",
+							"    pm.expect(pm.response.text()).to.include(\"80206\");",
+							"    pm.expect(pm.response.text()).to.include(\"Denver\");",
+							"    pm.expect(pm.response.text()).to.include(\"Mesa\");",
+							"    pm.expect(pm.response.text()).to.include(\"Packing\");",
+							"    pm.expect(pm.response.text()).to.include(\"Wednesday\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cla.ms/business?order=averageRatingScore&businessName=Contracting&operatingCity=Denver&workType=Packing&averageRatingScore=1&openOn=Monday&openAt=12",
+					"protocol": "https",
+					"host": [
+						"cla",
+						"ms"
+					],
+					"path": [
+						"business"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "averageRatingScore"
+						},
+						{
+							"key": "direction",
+							"value": "desc",
+							"disabled": true
+						},
+						{
+							"key": "businessId",
+							"value": "22",
+							"disabled": true
+						},
+						{
+							"key": "businessName",
+							"value": "Contracting"
+						},
+						{
+							"key": "operatingCity",
+							"value": "Denver"
+						},
+						{
+							"key": "workType",
+							"value": "Packing"
+						},
+						{
+							"key": "averageRatingScore",
+							"value": "1"
+						},
+						{
+							"key": "openOn",
+							"value": "Monday"
+						},
+						{
+							"key": "openAt",
+							"value": "12"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Businesses - by Business ID $1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "82f6dd33-c028-4053-9a36-9a9f7206f764",
+						"exec": [
+							"//general tests",
+							"pm.test(\"Status 200 test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"OK test\", function () {",
+							"    pm.response.to.be.ok;",
+							"});",
+							"pm.test(\"With Body test\", function () {",
+							"    pm.response.to.be.withBody;",
+							"});",
+							"pm.test(\"JSON Body test\", function () {",
+							"    pm.response.to.be.json;",
+							"});",
+							"pm.test(\"Not Error test\", function () {",
+							"    pm.response.to.not.be.error;",
+							"});",
+							"",
+							"//make sure the response contains the exact format always returned",
+							"pm.test(\"Contains httpStatus Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"httpStatus\", 200);",
+							"});",
+							"pm.test(\"Contains noun Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"noun\", \"business\");",
+							"});",
+							"pm.test(\"Contains verb Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"verb\", \"GET\");",
+							"});",
+							"pm.test(\"Contains errorCode Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"errorCode\", \"none\");",
+							"});",
+							"pm.test(\"Contains errors Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"errors\", []);",
+							"});",
+							"pm.test(\"Contains friendlyError Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"friendlyError\", \"\");",
+							"});",
+							"pm.test(\"Contains result Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"result\", \"success\");",
+							"});",
+							"pm.test(\"Contains count Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"count\", 1);",
+							"});",
+							"pm.test(\"Contains data Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"data\");",
+							"});",
+							"pm.test(\"Contains ID property\", function () {",
+							"    var jsonData = JSON.parse(responseBody);",
+							"    var firstDataObject = jsonData.data[0];",
+							"    pm.expect(firstDataObject).to.have.property(\"id\");",
+							"});",
+							"",
+							"pm.test(\"Body matches expected data strings\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"businessName\");",
+							"    pm.expect(pm.response.text()).to.include(\"businessHours\");",
+							"    pm.expect(pm.response.text()).to.include(\"businessAddress\");",
+							"    pm.expect(pm.response.text()).to.include(\"operatingCities\");",
+							"    pm.expect(pm.response.text()).to.include(\"workTypes\");",
+							"    pm.expect(pm.response.text()).to.include(\"reviews\");",
+							"});",
+							"pm.test(\"Body matches expected data\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Sunday\");",
+							"    pm.expect(pm.response.text()).to.include(\"CO\");",
+							"    pm.expect(pm.response.text()).to.include(\"80206\");",
+							"    pm.expect(pm.response.text()).to.include(\"Denver\");",
+							"    pm.expect(pm.response.text()).to.include(\"Mesa\");",
+							"    pm.expect(pm.response.text()).to.include(\"Packing\");",
+							"    pm.expect(pm.response.text()).to.include(\"Wednesday\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cla.ms/business?businessId={{responseBusinessId1}}",
+					"protocol": "https",
+					"host": [
+						"cla",
+						"ms"
+					],
+					"path": [
+						"business"
+					],
+					"query": [
+						{
+							"key": "businessId",
+							"value": "{{responseBusinessId1}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Business - ID $1",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8c057e6d-d910-4848-b4f5-840e2a508754",
+						"exec": [
+							"var responseBusinessId1 = pm.collectionVariables.get(\"responseBusinessId1\");",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "f481659c-f2e8-4153-bbbd-8eba4cf5e2ee",
+						"exec": [
+							"//general tests",
+							"pm.test(\"Status 200 test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"OK test\", function () {",
+							"    pm.response.to.be.ok;",
+							"});",
+							"pm.test(\"With Body test\", function () {",
+							"    pm.response.to.be.withBody;",
+							"});",
+							"pm.test(\"JSON Body test\", function () {",
+							"    pm.response.to.be.json;",
+							"});",
+							"pm.test(\"Not Error test\", function () {",
+							"    pm.response.to.not.be.error;",
+							"});",
+							"",
+							"//make sure the response contains the exact format always returned",
+							"pm.test(\"Contains httpStatus Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"httpStatus\", 200);",
+							"});",
+							"pm.test(\"Contains noun Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"noun\", \"business\");",
+							"});",
+							"pm.test(\"Contains verb Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"verb\", \"DELETE\");",
+							"});",
+							"pm.test(\"Contains errorCode Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"errorCode\", \"none\");",
+							"});",
+							"pm.test(\"Contains errors Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"errors\", []);",
+							"});",
+							"pm.test(\"Contains friendlyError Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"friendlyError\", \"\");",
+							"});",
+							"pm.test(\"Contains result Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"result\", \"success\");",
+							"});",
+							"pm.test(\"Contains count Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"count\", 1);",
+							"});",
+							"pm.test(\"Contains data Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"data\", []);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://cla.ms/business?businessId={{responseBusinessId1}}",
+					"protocol": "https",
+					"host": [
+						"cla",
+						"ms"
+					],
+					"path": [
+						"business"
+					],
+					"query": [
+						{
+							"key": "businessId",
+							"value": "{{responseBusinessId1}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Business - ID $2",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8c057e6d-d910-4848-b4f5-840e2a508754",
+						"exec": [
+							"var responseBusinessId1 = pm.collectionVariables.get(\"responseBusinessId1\");",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "f481659c-f2e8-4153-bbbd-8eba4cf5e2ee",
+						"exec": [
+							"//general tests",
+							"pm.test(\"Status 200 test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"OK test\", function () {",
+							"    pm.response.to.be.ok;",
+							"});",
+							"pm.test(\"With Body test\", function () {",
+							"    pm.response.to.be.withBody;",
+							"});",
+							"pm.test(\"JSON Body test\", function () {",
+							"    pm.response.to.be.json;",
+							"});",
+							"pm.test(\"Not Error test\", function () {",
+							"    pm.response.to.not.be.error;",
+							"});",
+							"",
+							"//make sure the response contains the exact format always returned",
+							"pm.test(\"Contains httpStatus Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"httpStatus\", 200);",
+							"});",
+							"pm.test(\"Contains noun Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"noun\", \"business\");",
+							"});",
+							"pm.test(\"Contains verb Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"verb\", \"DELETE\");",
+							"});",
+							"pm.test(\"Contains errorCode Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"errorCode\", \"none\");",
+							"});",
+							"pm.test(\"Contains errors Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"errors\", []);",
+							"});",
+							"pm.test(\"Contains friendlyError Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"friendlyError\", \"\");",
+							"});",
+							"pm.test(\"Contains result Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"result\", \"success\");",
+							"});",
+							"pm.test(\"Contains count Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"count\", 1);",
+							"});",
+							"pm.test(\"Contains data Body test\", function () {",
+							"    pm.response.to.have.jsonBody(\"data\", []);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://cla.ms/business?businessId={{responseBusinessId2}}",
+					"protocol": "https",
+					"host": [
+						"cla",
+						"ms"
+					],
+					"path": [
+						"business"
+					],
+					"query": [
+						{
+							"key": "businessId",
+							"value": "{{responseBusinessId2}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "51d6154e-4afd-4d37-ae52-43630556c397",
+			"key": "ratingScore1",
+			"value": ""
+		},
+		{
+			"id": "04353781-9761-47e4-af2f-8403b25bebcb",
+			"key": "ratingScore2",
+			"value": ""
+		},
+		{
+			"id": "71ed6d1c-2361-4bb9-981f-cd512a526799",
+			"key": "ratingScore3",
+			"value": ""
+		},
+		{
+			"id": "637685ba-7f2b-4772-883e-5c4a29768833",
+			"key": "businessName1",
+			"value": ""
+		},
+		{
+			"id": "2668da83-42dc-439e-a7c5-ba0ee8a7728d",
+			"key": "businessName2",
+			"value": ""
+		},
+		{
+			"id": "176936ed-37cf-4cb2-b5ac-b9d94790db1e",
+			"key": "ratingScore4",
+			"value": ""
+		},
+		{
+			"id": "2c7b618c-f35d-455a-b95f-c7b7a6051292",
+			"key": "ratingScore5",
+			"value": ""
+		},
+		{
+			"id": "c8cd2be2-f28f-49b3-a013-8fdee9e874bc",
+			"key": "ratingScore6",
+			"value": ""
+		},
+		{
+			"id": "4aff1c61-3379-4107-8ec9-8a78e9443806",
+			"key": "name",
+			"value": ""
+		},
+		{
+			"id": "a392df64-9790-465e-9430-38b948771aa7",
+			"key": "businessId1",
+			"value": ""
+		},
+		{
+			"id": "2a074b4f-4e29-4170-a1a7-935c763fbae8",
+			"key": "businessId2",
+			"value": ""
+		},
+		{
+			"id": "d49be376-e293-40c4-916c-1f38aa00004b",
+			"key": "businessName",
+			"value": ""
+		},
+		{
+			"id": "1f98e781-2f96-4cd7-bb3e-90cee4936cbd",
+			"key": "requestBusinessName1",
+			"value": ""
+		},
+		{
+			"id": "08b5d8b3-af5b-413f-a86d-29d739c289c4",
+			"key": "requestBusinessName2",
+			"value": ""
+		},
+		{
+			"id": "f3b69968-ca19-415b-92eb-61f9db513fd4",
+			"key": "responseBusinessId1",
+			"value": ""
+		},
+		{
+			"id": "10cb004a-bc32-4613-8524-833e0b721fee",
+			"key": "responseBusinessId2",
+			"value": ""
+		},
+		{
+			"id": "b8db73cf-5724-4e5a-9020-fac38ac3e019",
+			"key": "responseBusinessName1",
+			"value": ""
+		},
+		{
+			"id": "9fc51739-d674-44be-a55c-f606f0fedbaa",
+			"key": "responseBusinessName2",
+			"value": ""
+		}
+	],
+	"protocolProfileBehavior": {}
+}

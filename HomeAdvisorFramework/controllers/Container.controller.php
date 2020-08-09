@@ -19,15 +19,6 @@ class Container
         $this->_logLevel = $this->_properties->getLogLevel();
     }
 
-    public function getProperties()
-    {
-        if (isset(self::$shared['properties'])) {
-            return self::$shared['properties'];
-        }
-
-        return self::$shared['properties'] = $this->_properties;
-    }
-
     public function getLogger()
     {
         if (isset(self::$shared['logger'])) {
@@ -45,8 +36,8 @@ class Container
             return self::$shared['mysqlDBConnect'];
         }
 
-        global $earthquakesDBLogin;
-        $mysqlDBConnect = new MySQLConnect($earthquakesDBLogin['server'], $earthquakesDBLogin['username'], $earthquakesDBLogin['password'], $earthquakesDBLogin['database']);
+        global $homeadvisorDBLogin;
+        $mysqlDBConnect = new MySQLConnect($homeadvisorDBLogin['server'], $homeadvisorDBLogin['username'], $homeadvisorDBLogin['password'], $homeadvisorDBLogin['database']);
         $mysqlConnection = $mysqlDBConnect->db;
 
         return self::$shared['mysqlDBConnect'] = $mysqlConnection;

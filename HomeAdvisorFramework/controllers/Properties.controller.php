@@ -45,9 +45,4 @@ class Properties
         }
         return NULL;
     }
-
-    protected function setProperty($name, $val)
-    {
-        $this->data[$name] = $val;
-    }
 }

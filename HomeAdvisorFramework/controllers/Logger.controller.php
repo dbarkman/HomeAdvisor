@@ -13,22 +13,16 @@ class Logger
     const FATAL = 0x16;
 
     public static $levels = array(1 => "DEBUG", 2 => "INFO", 4 => "WARN", 8 => "ERROR", 16 => "FATAL");
-    private static $instance;
 
-    private $logPath = "";
-    private $logFile = "Framework.log";
-    private $logLevel = self::DEBUG;
+    private $logPath;
+    private $logFile;
+    private $logLevel;
 
     public function __construct($level, $file)
     {
         $this->logLevel = $level;
         $this->logFile = $file;
-        $this->logPath = dirname(__FILE__) . "/../logs";
-    }
-
-    public static function getLevelString($int)
-    {
-        return self::$levels[$int];
+        $this->logPath = '/var/www/html/HomeAdvisorFramework/logs';
     }
 
     public static function getLevelInt($string)
@@ -41,16 +35,6 @@ class Logger
         }
 
         return NULL;
-    }
-
-    public function getLogLevelString()
-    {
-        return self::$levels[$this->logLevel];
-    }
-
-    public function getLogLevel()
-    {
-        return $this->logLevel;
     }
 
     private function log($level, $message)

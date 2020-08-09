@@ -46,19 +46,4 @@ class HomeAdvisorProperties extends Properties
         }
         return "INFO";
     }
-
-    public function setLogFile($value)
-    {
-        $this->setProperty(self::PROP_LOGFILE, $value);
-    }
-
-    public function setLogLevel($value)
-    {
-        $this->setLogLevelString(Logger::getLevelString($value));
-    }
-
-    public function setLogLevelString($value)
-    {
-        $this->setProperty(self::PROP_LOGLEVEL, $value);
-    }
 }
