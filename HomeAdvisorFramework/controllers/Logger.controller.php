@@ -22,7 +22,7 @@ class Logger
     {
         $this->logLevel = $level;
         $this->logFile = $file;
-        $this->logPath = '/var/www/html/HomeAdvisorFramework/logs';
+        $this->logPath = '../HomeAdvisorFramework/logs';
     }
 
     public static function getLevelInt($string)

@@ -560,17 +560,6 @@
 					"script": {
 						"id": "27da5834-86cc-4953-982c-73d72d7ef30b",
 						"exec": [
-							"//grab data from the response and store in a collection variable",
-							"var jsonData = JSON.parse(responseBody);",
-							"var businessId1 = jsonData.data[0].id;",
-							"var businessId2 = jsonData.data[1].id;",
-							"pm.collectionVariables.set(\"businessId1\", businessId1);",
-							"pm.collectionVariables.set(\"businessId2\", businessId2);",
-							"var businessName1 = jsonData.data[0].businessName;",
-							"var businessName2 = jsonData.data[1].businessName;",
-							"pm.collectionVariables.set(\"businessName1\", businessName1);",
-							"pm.collectionVariables.set(\"businessName2\", businessName2);",
-							"",
 							"//general tests",
 							"pm.test(\"Status 200 test\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -649,7 +638,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://cla.ms/business?order=businessName&businessName=Contracting&operatingCity=Denver&workType=Packing&averageRatingScore=1&openOn=Monday&openAt=12",
+					"raw": "https://cla.ms/business?order=businessName&direction=desc&operatingCity=Denver&workType=Packing&averageRatingScore=1&openOn=Monday&openAt=12&businessName=Contracting",
 					"protocol": "https",
 					"host": [
 						"cla",
@@ -665,17 +654,12 @@
 						},
 						{
 							"key": "direction",
-							"value": "desc",
-							"disabled": true
+							"value": "desc"
 						},
 						{
 							"key": "businessId",
-							"value": "22",
+							"value": "33",
 							"disabled": true
-						},
-						{
-							"key": "businessName",
-							"value": "Contracting"
 						},
 						{
 							"key": "operatingCity",
@@ -696,6 +680,10 @@
 						{
 							"key": "openAt",
 							"value": "12"
+						},
+						{
+							"key": "businessName",
+							"value": "Contracting"
 						}
 					]
 				}
@@ -1135,92 +1123,92 @@
 	],
 	"variable": [
 		{
-			"id": "51d6154e-4afd-4d37-ae52-43630556c397",
+			"id": "cd7529b9-7f41-4553-9b9f-067736f21b02",
 			"key": "ratingScore1",
 			"value": ""
 		},
 		{
-			"id": "04353781-9761-47e4-af2f-8403b25bebcb",
+			"id": "c0b6b7c1-85e0-4a96-add6-7405f0eaa774",
 			"key": "ratingScore2",
 			"value": ""
 		},
 		{
-			"id": "71ed6d1c-2361-4bb9-981f-cd512a526799",
+			"id": "a4a975e8-2761-44be-9624-3a7bdf7bf2cc",
 			"key": "ratingScore3",
 			"value": ""
 		},
 		{
-			"id": "637685ba-7f2b-4772-883e-5c4a29768833",
+			"id": "aabcef48-5fcd-493c-b2cd-b6004a4fa6e7",
 			"key": "businessName1",
 			"value": ""
 		},
 		{
-			"id": "2668da83-42dc-439e-a7c5-ba0ee8a7728d",
+			"id": "7864eea8-b318-427f-8efe-7ec54fc15738",
 			"key": "businessName2",
 			"value": ""
 		},
 		{
-			"id": "176936ed-37cf-4cb2-b5ac-b9d94790db1e",
+			"id": "4d01dc1c-8a31-4a5f-8134-45d717ae5217",
 			"key": "ratingScore4",
 			"value": ""
 		},
 		{
-			"id": "2c7b618c-f35d-455a-b95f-c7b7a6051292",
+			"id": "a2d54d5e-8e7f-436a-b442-f53575ba616d",
 			"key": "ratingScore5",
 			"value": ""
 		},
 		{
-			"id": "c8cd2be2-f28f-49b3-a013-8fdee9e874bc",
+			"id": "2e739e8c-6182-4966-b487-3125b1ef5a6a",
 			"key": "ratingScore6",
 			"value": ""
 		},
 		{
-			"id": "4aff1c61-3379-4107-8ec9-8a78e9443806",
+			"id": "18690f7a-a325-45e6-94ce-5455e1f465aa",
 			"key": "name",
 			"value": ""
 		},
 		{
-			"id": "a392df64-9790-465e-9430-38b948771aa7",
+			"id": "2e02c5ae-469e-4117-93bf-8fe70e45af15",
 			"key": "businessId1",
 			"value": ""
 		},
 		{
-			"id": "2a074b4f-4e29-4170-a1a7-935c763fbae8",
+			"id": "6d701634-3fac-4613-b431-5eb520634c56",
 			"key": "businessId2",
 			"value": ""
 		},
 		{
-			"id": "d49be376-e293-40c4-916c-1f38aa00004b",
+			"id": "001ec665-c984-4bd0-aa12-a1efd97fffe3",
 			"key": "businessName",
 			"value": ""
 		},
 		{
-			"id": "1f98e781-2f96-4cd7-bb3e-90cee4936cbd",
+			"id": "fbb8ef02-2c04-4a22-b1c9-da6074a0f2d3",
 			"key": "requestBusinessName1",
 			"value": ""
 		},
 		{
-			"id": "08b5d8b3-af5b-413f-a86d-29d739c289c4",
+			"id": "b71b4f50-0dc8-4f4e-a47c-11b82d1cfd33",
 			"key": "requestBusinessName2",
 			"value": ""
 		},
 		{
-			"id": "f3b69968-ca19-415b-92eb-61f9db513fd4",
+			"id": "30240e57-e89d-4188-9c00-5d6ba59a47fb",
 			"key": "responseBusinessId1",
 			"value": ""
 		},
 		{
-			"id": "10cb004a-bc32-4613-8524-833e0b721fee",
+			"id": "02ee07c8-e7eb-4d12-9a8c-df997a578a62",
 			"key": "responseBusinessId2",
 			"value": ""
 		},
 		{
-			"id": "b8db73cf-5724-4e5a-9020-fac38ac3e019",
+			"id": "c7a5a685-93da-4f1e-8c8b-583eb1f9b931",
 			"key": "responseBusinessName1",
 			"value": ""
 		},
 		{
-			"id": "9fc51739-d674-44be-a55c-f606f0fedbaa",
+			"id": "fa5bd19f-240f-406a-93e4-8551af07606f",
 			"key": "responseBusinessName2",
 			"value": ""
 		}
