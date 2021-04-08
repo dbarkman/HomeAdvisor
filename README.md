@@ -7,9 +7,6 @@ Included in this repo are the following:
 * HomeAdvisor.postman_collection.json: the test suite for testing the HomeAdvisor project with PostMan.
 	* Note: the test suite currently points to the hosted version of this project.
 
-## Hosted
-This project is hosted and can be run at https://cla.ms.
-
 ## Local Install
 
 This project has been tested on a LAMP stack with the following versions:
