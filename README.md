@@ -18,7 +18,7 @@ This project has been tested on a LAMP stack with the following versions:
 In order to run this project locally, perform the following:
 1. Clone the project to the system and directory preferred.
 2. Update the permissions of the cloned project to be readable by the web server user.
-3. Point the web server's document room to the HomeAdvisorAPI folder.
+3. Point the web server's document root to the HomeAdvisorAPI folder.
 4. Run the SQL script to create the database, tables and user used by the code.
 * If the password is changed from what's in the SQL script, please also change the password in HomeAdvisorFramework/config/credentials.php.
 
